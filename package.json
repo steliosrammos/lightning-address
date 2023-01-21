@@ -2,10 +2,11 @@
   "name": "lightning-address-validator",
   "version": "1.0.0",
   "description": "Utility functions to validate a lightning address",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
   "repository": "https://github.com/steliosrammos/lightning-address-validator.git",
   "author": "Stelios Rammos <stelio.rammos@gmail.com>",
-  "types": "lib/types/index.d.ts",
+  "keywords": ["lightning address", "validator"],
   "license": "MIT",
   "files": [
     "lib/**/*"

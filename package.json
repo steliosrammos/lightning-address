@@ -1,12 +1,15 @@
 {
   "name": "lightning-address-validator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Utility functions to validate a lightning address",
   "main": "lib/index.js",
-  "types": "lib/types/index.d.ts",
+  "types": "lib/index.d.ts",
   "repository": "https://github.com/steliosrammos/lightning-address-validator.git",
   "author": "Stelios Rammos <stelio.rammos@gmail.com>",
-  "keywords": ["lightning address", "validator"],
+  "keywords": [
+    "lightning address",
+    "validator"
+  ],
   "license": "MIT",
   "files": [
     "lib/**/*"
@@ -30,7 +33,7 @@
     "test": "jest --config jestconfig.json",
     "prepare": "yarn build",
     "prepublishOnly": "yarn test && yarn lint",
-    "preversion" : "yarn lint",
+    "preversion": "yarn lint",
     "version": "yarn format && git add -A src",
     "postversion": "git push && git push --tags"
   }

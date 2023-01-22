@@ -16,6 +16,24 @@ export const isValidService = async (lightningAddress: string): Promise<boolean>
       throw new LightningAddressValidationError(`invalid lightning address service: ${reason}`, 'INVALID_SERVICE');
     }
 
+    const expectedKeys = ['callback', 'maxSendable', 'minSendable', 'metadata', 'tag'];
+
+    expectedKeys.forEach((key) => {
+      if (!json[key]) {
+        throw new LightningAddressValidationError(
+          `invalid lightning address service response, missing key: ${key}`,
+          'INVALID_SERVICE',
+        );
+      }
+    });
+
+    if (json.tag !== 'payRequest') {
+      throw new LightningAddressValidationError(
+        `invalid lightning address service response, tag got invalid value: ${json.tag}, expected 'payRequest'`,
+        'INVALID_SERVICE',
+      );
+    }
+
     return true;
   } catch (error) {
     throw new LightningAddressValidationError(
